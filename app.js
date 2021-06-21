@@ -27,6 +27,7 @@ const categoriesRoutes = require("./routes/categories");
 const productsRoutes = require("./routes/products");
 const userRoutes = require("./routes/users");
 const orderRoutes = require("./routes/orders");
+const sellerRoutes = require("./routes/sellers");
 
 const api = process.env.API_URL;
 
@@ -34,6 +35,7 @@ app.use(`${api}/products`, productsRoutes);
 app.use(`${api}/categories`, categoriesRoutes);
 app.use(`${api}/users`, userRoutes);
 app.use(`${api}/orders`, orderRoutes);
+app.use(`${api}/sellers`, sellerRoutes);
 
 // http://localhost:2000/api/v1/products
 
@@ -55,13 +57,9 @@ mongoose
 
 //Development
 
-//app.listen(3000, () => {
-//console.log(api);
-// console.log("server is running http://localhost:3000");
-//});
+app.listen(3000, () => {
+  console.log(api);
+  console.log("server is running http://localhost:3000");
+});
 
 
-var server = app.listen(process.env.PORT || 3000, function () {
-  var port = server.address().port;
-  console.log("Express is working on port " + port)
-})

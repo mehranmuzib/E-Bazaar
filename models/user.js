@@ -41,6 +41,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
+  isFarmer: {
+    type: Boolean,
+    default: false,
+  },
+
 });
 
 userSchema.virtual("id").get(function () {

@@ -34,6 +34,7 @@ router.post('/', async (req, res) => {
     zip: req.body.zip,
     city: req.body.city,
     country: req.body.country,
+    isFarmer: req.body.isFarmer
   })
   user = await user.save();
 
@@ -66,6 +67,7 @@ router.put('/:id', async (req, res) => {
       zip: req.body.zip,
       city: req.body.city,
       country: req.body.country,
+      isFarmer: req.body.isFarmer
     },
     { new: true }
   )
@@ -114,6 +116,7 @@ router.post('/register', async (req, res) => {
     zip: req.body.zip,
     city: req.body.city,
     country: req.body.country,
+    isFarmer: req.body.isFarmer
   })
   user = await user.save();
 
